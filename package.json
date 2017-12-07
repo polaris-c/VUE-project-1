@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/polaris-c/VUE-project-1/issues"
   },
-  "homepage": "https://github.com/polaris-c/VUE-project-1#readme"
+  "homepage": "https://github.com/polaris-c/VUE-project-1#readme",
+  "dependencies": {
+    "vue": "^2.5.9",
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {}
 }
