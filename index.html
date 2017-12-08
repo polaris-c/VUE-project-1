@@ -8,14 +8,43 @@
 
     <title>VUE-Project</title>
 
-    <link rel="stylesheet" type="text/css" href= "node_modules/normalize.css">
-    
+    <link rel="stylesheet"  href = "node_modules/normalize.css">
+    <link rel="stylesheet" type="text/css" href = "index.css">
 </head>
 
 <body>
-	<h3>VUE-Project</h3>
+	<!-- <h3>VUE-Project</h3> -->
+	<div id = "main">
+
+		<div class = "navbar">
+			<h1>- TASK LIST -</h1>
+		</div>
+
+		<div class = "header">***</div>
+
+		<div id = "taskForm">
+			<div class = "wrap">
+				<input id = "taskInput" type="text" >
+				<button type = "submit">submit</button>
+			</div>
+		</div>
+
+		<div class = "taskList">
+			<div class = "wrap">
+				<div clas= "uncompletedItem">Uncompleted</div>	
+			</div>
+		</div>
+
+		<div class = "taskList">
+			<div class = "wrap">
+				<div class = "completedItem">Completed</div>
+			</div>			
+		</div>
+
+	</div>
 
     <script type="text/javascript" src = "index.js"></script>
+    <script type="text/javascript" src = "myStorage.js"></script>
     <script type="text/javascript" src = "node_modules/vue/dist/vue.js"></script>
 </body>
 </html>
