@@ -22,16 +22,22 @@
 
 		<div class = "header">***</div>
 
-		<div id = "taskForm">
+		<form @submit.prevent = "merge" id = "taskForm">
 			<div class = "wrap">
-				<input id = "taskInput" type="text" >
+				<input id = "taskInput" type="text" v-model.lazy = "current.title" autocomplete = "off">
 				<button type = "submit">submit</button>
 			</div>
-		</div>
+			<!-- {{ current.title }} -->
+		</form>
 
 		<div class = "taskList">
 			<div class = "wrap">
-				<div clas= "uncompletedItem">Uncompleted</div>	
+				<!-- Uncompleted: {{ list }} -->
+				<div v-for = "(item, id) in list" class= "uncompletedItem"><br> 
+					{{ item.title }} {{ id }} 
+					<button @click = "update(item)">Update</button>
+					<button @click = "remove(id)" >Delete</button>
+				</div>	
 			</div>
 		</div>
 
@@ -43,8 +49,10 @@
 
 	</div>
 
+    <script src = "node_modules/vue/dist/vue.js"></script>
+
     <script type="text/javascript" src = "index.js"></script>
     <script type="text/javascript" src = "myStorage.js"></script>
-    <script type="text/javascript" src = "node_modules/vue/dist/vue.js"></script>
+
 </body>
 </html>

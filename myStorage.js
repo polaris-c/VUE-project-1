@@ -15,8 +15,8 @@
 			return JSON.parse(json);
 		}
 	}
-}
-)();
+
+})();
 
 ms.set('name', 'AAA');
 var name = ms.get('name');
