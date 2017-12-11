@@ -34,9 +34,9 @@
 			<div class = "wrap">
 				<!-- Uncompleted: {{ list }} -->
 				<div v-for = "(item, id) in list" class= "uncompletedItem"><br> 
-					{{ item.title }} {{ id }} 
+					{{ item.title }} - {{ item.id }} - {{ id }} 
 					<button @click = "update(item)">Update</button>
-					<button @click = "remove(id)" >Delete</button>
+					<button @click = "remove(item.id)" >Delete</button>
 				</div>	
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-;(function() {
+(function() {
 	'use strict';
     console.log('Hello!');
 
@@ -25,9 +25,7 @@
 				console.log('current.id:', this.current.id);
 
 				if(isUpdate) {
-					var index = this.list.findIndex(function(item) {
-						return item.id == isUpdate;
-					});
+					var index = this.findIndexFunc(id);
 					Vue.set(this.list, index, copy(this.current));
 
 					// this.list[index] = Object.assign({}, this.current)
@@ -54,21 +52,28 @@
 			},
 
 			remove: function(id) {
-				this.list.splice(id, 1);
+				var index = this.findIndexFunc(id);
+				this.list.splice(index, 1);
 			},
 
 			nextID: function() {
-				return this.list.length + 1;
+				return this.list.length ;
 			},
 
 			reset: function() {
 				this.update({});
+			},
+
+			findIndexFunc: function(id) {
+				return this.list.findIndex(function(item){
+					return item.id == id
+				})
 			}
 
 		},
     });
 
-}) ();
+}()) ;
 
 
 
